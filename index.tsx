@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
+// example of acessing object properties in react
 let city = {
   name: 'Madrid',
   country: 'Spain'
