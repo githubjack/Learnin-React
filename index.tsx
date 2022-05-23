@@ -28,9 +28,9 @@ function SkiResort({name}) {
 }
 
 function App(props) {
- if(props.season === 'summer') {
+ if(props.season === 'summer' || props.season === 'autumn') {
    return <Lake name='Jack Lake!'/>
- } else if (props.season === 'spring') {
+ } else if (props.season === 'winter' || props.season === 'spring') {
    return <SkiResort name='Jackson Mountain Resort!' />
  }
 
@@ -38,7 +38,7 @@ function App(props) {
 root.render(
   <StrictMode>
     <div>
-      <App season='spring'/>
+      <App season='autumn'/>
     </div>
   </StrictMode>
 );
