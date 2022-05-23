@@ -8,11 +8,14 @@ const root = createRoot(rootElement);
 
 
 // example of JSX ( create a functional component return something and call it by tag name )
-function Hello() {
+function Hello({Library, Message, Number}) {
+//  console.log(props);
+  console.log(Object.keys(length));
   return (
     <div>
-      <h1>Notifying this is a react component.</h1>
-      <p className="message">This could be a <strong>notify</strong> component</p>
+      <h1>Notifying this is a {Library} component.</h1>
+      <p className="message">This could be a <strong>notify</strong> component main message is <b>{Message}</b></p>
+      <p>Special number is : {Number}</p>
     </div>
   )
 
@@ -45,7 +48,7 @@ root.render(
       <p>If you are a <strong>Footie fan</strong> you have a choice {city.clubs} to check out, or get down to district <b>4</b> and enjoy some <strong>{city.food}</strong></p>
       */}
 
-      <Hello />
+      <Hello Library="React" Message="Have fun" Number={3} />
     </div>
   </StrictMode>
 );
