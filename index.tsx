@@ -35,17 +35,19 @@ let city = {
 
 };
 */
-// composing components, passing component a to b
-function Lake(props) {
+// Component reuse passing different props values
+function Lake({name}) {
   return (
-    <h1>{props.name}</h1>
+    <h1>{name}</h1>
   );
 }
 function App() {
   return (
     <div>
       <h2>App</h2>
-      <Lake name="Lake todo"/>
+      <Lake name="Lake tadhoe"/>
+      <Lake name="Lake mae and fog"/>
+      <Lake name="Lake tea at noon"/>
     </div>
   );
 }
