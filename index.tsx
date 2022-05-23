@@ -8,6 +8,7 @@ const root = createRoot(rootElement);
 
 
 // example of JSX ( create a functional component return something and call it by tag name )
+/*
 function Hello({Library, Message, Number}) {
 //  console.log(props);
   console.log(Object.keys(length));
@@ -20,8 +21,7 @@ function Hello({Library, Message, Number}) {
   )
 
 }
-
-
+*/
 
 // example of acessing object properties in react
 /*
@@ -35,6 +35,21 @@ let city = {
 
 };
 */
+// composing components, passing component a to b
+function Lake(props) {
+  return (
+    <h1>{props.name}</h1>
+  );
+}
+function App() {
+  return (
+    <div>
+      <h2>App</h2>
+      <Lake name="Lake todo"/>
+    </div>
+  );
+}
+
 
 root.render(
   <StrictMode>
@@ -47,8 +62,12 @@ root.render(
       <p>Enjoy your time in {city.region} where you have the choice of <strong>{city.hotels}</strong> to choose from.</p>
       <p>If you are a <strong>Footie fan</strong> you have a choice {city.clubs} to check out, or get down to district <b>4</b> and enjoy some <strong>{city.food}</strong></p>
       */}
-
-      <Hello Library="React" Message="Have fun" Number={3} />
+{
+  /**
+   *       <Hello Library="React" Message="Have fun" Number={3} />
+   */
+}
+    <App />
     </div>
   </StrictMode>
 );
