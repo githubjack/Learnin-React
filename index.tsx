@@ -12,7 +12,7 @@ function Hello() {
   return (
     <div>
       <h1>Notifying this is a react component.</h1>
-      <p className="message">This could be a notify component</p>
+      <p className="message">This could be a <strong>notify</strong> component</p>
     </div>
   )
 
