@@ -11,34 +11,58 @@ Conditionally rendering using props: this could be an input to
 change a background color through checkbox checked or not equals different template using props and name
 */}
 
-function Lake({name}) {
+
+{/**
+Adding keys to components
+*/}
+function Lake() {
   return (
-    <div>
-      <h1>Visit {name}</h1>
-    </div>
+      <h1>Lake</h1>
   );
 }
 
-function SkiResort({name}) {
+function SkiResort() {
   return (
-    <div>
-      <h1>Visit {name}</h1>
-    </div>
+      <h1>Ski Resort</h1>
   );
 }
 
 function App(props) {
- if(props.season === 'summer' || props.season === 'autumn') {
-   return <Lake name='Jack Lake!'/>
- } else if (props.season === 'winter' || props.season === 'spring') {
-   return <SkiResort name='Jackson Mountain Resort!' />
- }
-
+  /*
+  return (
+    <React.Fragment>
+      <Lake/>
+      <SkiResort />
+    </React.Fragment>
+  );
+*/
 }
+
+{/**
+access position in array by name rather than position
+*/}
+
+const [first, second, third] = [
+  'popcorn',
+  'pretzels',
+  'pineapple'
+];
+console.log(first);
+console.log(second);
+console.log(third);
+{
+  /*
+console.log(snacks[0]);
+console.log(snacks[1]);
+console.log(snacks[2]);
+  */
+}
+
 root.render(
   <StrictMode>
-    <div>
-      <App season='autumn'/>
-    </div>
+    <React.Fragment>
+      <Lake />
+      <SkiResort />
+    </React.Fragment>
   </StrictMode>
 );
