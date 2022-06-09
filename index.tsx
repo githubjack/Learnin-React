@@ -7,39 +7,28 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 {/**
-  Using useState
+  Using useEffect
 */}
 
-
-function App(props) {
-  const [year, setYear] = React.useState(2050);
-  const [manager, setManager] = React.useState('Alex');
-  const [status, setStatus] = React.useState('Open');
+function Checkbox() {
+  const [checked, setChecked] = React.useState(false);
+  React.useEffect(() => {
+    alert(`checked: ${checked.toString()}`);
+  });
   return (
     <div>
-      <div>
-      <h1>{year}</h1>
-      <button onClick={() => setYear(year +1)}>Set Year</button>
-      </div>
-      <h2>Status: {status}</h2>
-      <div>
-        <h3>Manager on Duty: {manager}</h3>
-        <button onClick={() => setManager('Rachel')}>New Manager</button>
-      </div>
-      <div>
-        <button onClick={() => setStatus('Open')}>Open</button>
-        <button onClick={() => setStatus('Back in 5')}>Break</button>
-        <button onClick={() => setStatus('Closed')}>Closed</button>
-      </div>
+      <input type='checkbox' 
+             value={checked}
+             onChange={() => 
+             setChecked(checked => !checked)} 
+             />
+      {checked ? 'Checked' : 'Not Checked'}
     </div>
   );
-
 }
-
-
 
 root.render(
   <StrictMode>
-    <App />
+    <Checkbox />
   </StrictMode>
 );
