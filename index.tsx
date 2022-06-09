@@ -7,36 +7,24 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 {/**
-  Using useEffect
+  fetching data with useEffect as JSON Stringified
 */}
+function GitHubUser({login}) {
+  const [data, setData] = React.useState(null);
+  React.useEffect(() => {
+    fetch(`https://api.github.com/users/${login}`)
+    .then(res => res.json())
+    .then(setData)
+    .catch(console.error);
+  }, []);
+  if (data) {
+    return <div>{JSON.stringify(data)}</div>;
+  }
+  return null;
+}
  function App() {
-
-   const [val, setVal] = React.useState('');
-   const [valx, setValx] = React.useState('');
-   
-   React.useEffect(() => {
-     console.log(`field 1: ${val}`)
-   }, [val]);
-
-   React.useEffect(() => {
-    console.log(`field 2: ${valx}`)
-  }, [valx]);
-
-   return (
-     <div>
-       <label>Favorite phrase
-         <input value={val}
-                onChange={e => setVal(e.target.value)}/>
-       </label>
-       <hr />
-       <label>Second Favorite phrase
-         <input value={valx}
-                onChange={e => setValx(e.target.value)}/>
-       </label>
-     </div>
-   )
+    return <GitHubUser login='githubjack' />
  }
-
 
 root.render(
   <StrictMode>
