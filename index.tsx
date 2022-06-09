@@ -7,62 +7,29 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 {/**
-Conditionally rendering using props: this could be an input to 
-change a background color through checkbox checked or not equals different template using props and name
+  Using useState
 */}
 
-
-{/**
-Adding keys to components
-*/}
-function Lake() {
-  return (
-      <h1>Lake</h1>
-  );
-}
-
-function SkiResort() {
-  return (
-      <h1>Ski Resort</h1>
-  );
-}
 
 function App(props) {
-  /*
+  const [status, setStatus] = React.useState('Open');
   return (
-    <React.Fragment>
-      <Lake/>
-      <SkiResort />
-    </React.Fragment>
+    <div>
+      <h1>Status: {status}</h1>
+      <div>
+        <button onClick={() => setStatus('Open')}>Open</button>
+        <button onClick={() => setStatus('Back in 5')}>Break</button>
+        <button onClick={() => setStatus('Closed')}>Closed</button>
+      </div>
+    </div>
   );
-*/
+
 }
 
-{/**
-access position in array by name rather than position
-*/}
 
-const [first, second, third] = [
-  'popcorn',
-  'pretzels',
-  'pineapple'
-];
-console.log(first);
-console.log(second);
-console.log(third);
-{
-  /*
-console.log(snacks[0]);
-console.log(snacks[1]);
-console.log(snacks[2]);
-  */
-}
 
 root.render(
   <StrictMode>
-    <React.Fragment>
-      <Lake />
-      <SkiResort />
-    </React.Fragment>
+    <App />
   </StrictMode>
 );
