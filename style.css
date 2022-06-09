@@ -1,9 +1,6 @@
-h1, p {
-  font-family: Lato;
-}
-.message {
-  background-color:yellow;
-  padding:1em;
-  margin:1em;
-  border-radius:0.25em;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color:#faedcd;
 }
