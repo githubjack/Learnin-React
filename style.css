@@ -4,3 +4,13 @@ body{
   font-family: 'Poppins', sans-serif;
   background-color:#faedcd;
 }
+.card{
+  width:120px;
+  background:white;
+  border:none;
+  border-radius:0.25em;
+  box-shadow: 0 2px 2px lightsalmon;
+}
+.card img{
+  border-radius: inherit;
+}

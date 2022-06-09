@@ -18,7 +18,14 @@ function GitHubUser({login}) {
     .catch(console.error);
   }, []);
   if (data) {
-    return <div>{JSON.stringify(data)}</div>;
+    return (
+      <div>
+        <h1>{data.login}</h1>
+        <div className='card'>
+          <img src={data.avatar_url} width='120' />
+        </div>
+      </div>
+    )
   }
   return null;
 }
