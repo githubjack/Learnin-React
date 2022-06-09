@@ -9,26 +9,37 @@ const root = createRoot(rootElement);
 {/**
   Using useEffect
 */}
+ function App() {
 
-function Checkbox() {
-  const [checked, setChecked] = React.useState(false);
-  React.useEffect(() => {
-    alert(`checked: ${checked.toString()}`);
-  });
-  return (
-    <div>
-      <input type='checkbox' 
-             value={checked}
-             onChange={() => 
-             setChecked(checked => !checked)} 
-             />
-      {checked ? 'Checked' : 'Not Checked'}
-    </div>
-  );
-}
+   const [val, setVal] = React.useState('');
+   const [valx, setValx] = React.useState('');
+   
+   React.useEffect(() => {
+     console.log(`field 1: ${val}`)
+   }, [val]);
+
+   React.useEffect(() => {
+    console.log(`field 2: ${valx}`)
+  }, [valx]);
+
+   return (
+     <div>
+       <label>Favorite phrase
+         <input value={val}
+                onChange={e => setVal(e.target.value)}/>
+       </label>
+       <hr />
+       <label>Second Favorite phrase
+         <input value={valx}
+                onChange={e => setValx(e.target.value)}/>
+       </label>
+     </div>
+   )
+ }
+
 
 root.render(
   <StrictMode>
-    <Checkbox />
+    <App />
   </StrictMode>
 );
